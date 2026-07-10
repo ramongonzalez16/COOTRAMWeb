@@ -1,0 +1,48 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="JPAUtil" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.sebralo.cootram.entidades.TipoUsuario</class>
+        <class>com.sebralo.cootram.entidades.Persona</class>
+        <class>com.sebralo.cootram.entidades.Usuario</class>
+        <class>com.sebralo.cootram.entidades.TipoConductor</class>
+        <class>com.sebralo.cootram.entidades.Conductor</class>
+        <class>com.sebralo.cootram.entidades.Parqueadero</class>
+        <class>com.sebralo.cootram.entidades.TipoVehiculo</class>
+        <class>com.sebralo.cootram.entidades.EstadoVehiculo</class>
+        <class>com.sebralo.cootram.entidades.EstadoTarjetaOperacional</class>
+        <class>com.sebralo.cootram.entidades.TarjetaOperacional</class>
+        <class>com.sebralo.cootram.entidades.Vehiculo</class>
+        <class>com.sebralo.cootram.entidades.ValorPlanilla</class>
+        <class>com.sebralo.cootram.entidades.PlanillaOcasional</class>
+        <class>com.sebralo.cootram.entidades.Ruta</class>
+        <class>com.sebralo.cootram.entidades.Subruta</class>
+        <class>com.sebralo.cootram.entidades.Programacion</class>
+        <class>com.sebralo.cootram.entidades.ValorMulta</class>
+        <class>com.sebralo.cootram.entidades.Horario</class>
+        <class>com.sebralo.cootram.entidades.Multa</class>
+        <class>com.sebralo.cootram.entidades.ValorConduce</class>
+        <class>com.sebralo.cootram.entidades.Conduce</class>
+        <class>com.sebralo.cootram.entidades.Departamento</class>
+        <class>com.sebralo.cootram.entidades.Municipio</class>
+        <class>com.sebralo.cootram.entidades.TipoPregunta</class>
+        <class>com.sebralo.cootram.entidades.FormatoAlcoholemia</class>
+        <class>com.sebralo.cootram.entidades.Pregunta</class>
+        <class>com.sebralo.cootram.entidades.Respuesta</class>
+        <class>com.sebralo.cootram.entidades.EstadoSeleccion</class>
+        <class>com.sebralo.cootram.entidades.Encuesta</class>
+        <class>com.sebralo.cootram.entidades.RespuestaSeleccion</class>
+        <class>com.sebralo.cootram.entidades.Viaje</class>
+        <class>com.sebralo.cootram.entidades.Tiquete</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cootram"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="51186"/>
+            
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence.xml>

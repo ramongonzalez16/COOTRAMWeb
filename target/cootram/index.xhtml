@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Panel Principal - COOTRAM</title>
+    <h:outputStylesheet name="css/estilo-principal.css" library="resources"/>
+</h:head>
+
+<h:body>
+    <!-- 🟢 Barra superior -->
+    <header class="barra-superior">
+        <div class="contenedor-logo">
+            <h2>COOTRAM</h2>
+            <p>Cooperativa de Transportadores de Montenegro</p>
+        </div>
+        
+        <div class="contenedor-usuario">
+            <p class="texto-bienvenida">👋 Bienvenido, <strong>#{loginBean.usuarioActual.nombre}</strong></p>
+            <h:form>
+                <p:commandButton value="Cerrar Sesión" 
+                                 action="#{loginBean.cerrarSesion}" 
+                                 styleClass="btn-salir p-button-text p-button-danger"/>
+            </h:form>
+        </div>
+    </header>
+
+    <!-- 📌 Menú de navegación -->
+    <nav class="menu-principal">
+        <p:menubar styleClass="menu-estilo">
+            <p:submenu label="Gestión Principal">
+                <p:menuitem value="Conductores" url="#"/>
+                <p:menuitem value="Vehículos" url="#"/>
+                <p:menuitem value="Rutas" url="#"/>
+                <p:menuitem value="Saldos" url="#"/>
+                <p:menuitem value="Reportes" url="#"/>
+            </p:submenu>
+            <p:menuitem value="Inicio" url="/index.xhtml" icon="pi pi-home"/>
+        </p:menubar>
+    </nav>
+
+    <!-- 📦 Contenido central -->
+    <main class="contenido-central">
+        <div class="tarjeta-contenido">
+            <h1>¡Sistema COOTRAM funcionando correctamente! 🚀</h1>
+            <p class="texto-secundario">Acceso autorizado para el sistema de gestión de la cooperativa.</p>
+            <p/>
+        </div>
+    </main>
+
+    <!-- 📄 Pie de página -->
+    <footer class="pie-pagina">
+        <p>📞 (6) 745‑1234 | 📧 info@cootram.com.co | 📍 Montenegro, Quindío</p>
+    </footer>
+</h:body>
+</html>

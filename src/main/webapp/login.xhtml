@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <title>Ingreso - COOTRAM</title>
+    <!-- ✅ Enlace al CSS externo -->
+    <h:outputStylesheet name="css/estilo-login.css" library="resources"/>
+</h:head>
+
+<h:body>
+    <div class="logo-seccion">
+        <h1>COOTRAM</h1>
+        <p>Cooperativa de Transportadores de Montenegro</p>
+    </div>
+
+    <div class="tarjeta-login">
+        <p:messages  showSummary="true" showDetail="false" closable="true"/>
+
+        <h:form id="formLogin">
+            <p:panelGrid columns="1" style="width:100%; gap:1rem;">
+                <p:inputText id="usuario" 
+                             value="#{loginBean.usuario}" 
+                             required="true" 
+                             placeholder="Usuario"
+                             styleClass="campo"
+                             label="Usuario">
+                    <f:validateLength minimum="3"/>
+                    <f:ajax event="blur" render="usuarioMsg"/>
+                </p:inputText>
+                <p:message for="usuario" id="usuarioMsg" display="icon"/>
+
+                <p:password id="clave" 
+                            value="#{loginBean.clave}" 
+                            required="true" 
+                            placeholder="Contraseña"
+                            styleClass="campo"
+                            label="Contraseña"
+                            feedback="false">
+                    <f:ajax event="blur" render="claveMsg"/>
+                </p:password>
+                <p:message for="clave" id="claveMsg" display="icon"/>
+            </p:panelGrid>
+
+            <div class="contenedor-botones">
+                <p:commandButton value="Ingresar" 
+                                 action="#{loginBean.ingresar}" 
+                                 update="@form"
+                                 styleClass="btn-ingresar p-button-lg p-button-raised"/>
+
+                <p:commandButton value="Recordar contraseña" 
+                                 type="button" 
+                                 styleClass="btn-recordar p-button-lg p-button-raised"/>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>
